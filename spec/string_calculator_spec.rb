@@ -21,5 +21,9 @@ RSpec.describe StringCalculator do
     it 'returns correct summation when new line between numbers as input' do
       expect(StringCalculator.add("3\n5,7")).to eq(15)
     end
+
+    it 'supports custom delimiter like //[delimiter]\n[numbers…] e.g //;\n1;2' do
+      expect(StringCalculator.add("//;\n1;2")).to eq(3)
+    end
   end
 end
