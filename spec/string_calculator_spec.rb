@@ -7,15 +7,19 @@ RSpec.describe StringCalculator do
     end
 
     it 'returns number itself for when single digit is passed' do
-      expect(StringCalculator.add('7')).to eq(7)
+      expect(StringCalculator.add("7")).to eq(7)
     end
 
     it 'returns the sum of two comma-separated numbers as input' do
-      expect(StringCalculator.add('3, 4')).to eq(7)
+      expect(StringCalculator.add("3, 4")).to eq(7)
     end
 
     it 'returns the sum for multiple comma-separated numbers as input' do
-      expect(StringCalculator.add('3, 4, 5, 6')).to eq(18)
+      expect(StringCalculator.add("3, 4, 5, 6")).to eq(18)
+    end
+
+    it 'returns correct summation when new line between numbers as input' do
+      expect(StringCalculator.add("3\n5,7")).to eq(15)
     end
   end
 end
